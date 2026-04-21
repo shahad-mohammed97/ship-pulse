@@ -1,0 +1,15 @@
+الشركة (Carrier),البادئات المميزة (Prefixes),اللاحقات (Suffixes),طول التتبع القياسي,التعبير النمطي الأساسي (Core Regex),
+Amazon Logistics,"TBA, TBC, TBM, C",لا يوجد,11 إلى 15 رمزاً,^TB[A-C]\d{12}$|^C\d{10}$,https://track.amazon.com/
+UPS,"1Z, T",لا يوجد,10 إلى 18 رمزاً,"^1Z[A-Z0-9]{16}$|^\d{8,11}$",https://www.ups.com/us/en/home
+USPS,"9400, 9205, E, C",US (للدولي),13 أو 20 إلى 30 رمزاً,"^(9[1-4]\d{18,20}|[A-Z]{2}\d{9}US)$",https://www.usps.com/
+FedEx,أرقام فقط,لا يوجد,"12, 15, 20, 22, 34","^\d{12,34}$ (مع خوارزمية فحص)",https://www.fedex.com/en-us/tracking.html
+DHL,"3S, JJD, JVGL, GM, LX",متنوعة,10 إلى 39 رمزاً,^(JJD|3S|GM|LX|RX)[0-9A-Z]+|\d{10}$,https://www.dhl.com/us-en/home/tracking.html
+Royal Mail,"حرفين (مثل ZW, EA)",GB,13 رمزاً,^[A-Z]{2}\d{9}GB$,https://www.royalmail.com/track-your-item
+Aramex,DBP أو أرقام فقط,لا يوجد,10 إلى 11 رقماً,"^(DBP)?\d{10,11}$",https://www.aramex.com/us/en/track/shipments
+Yanwen,"VP, UH, EF, LP, SY, YT",YP (للنمط القياسي),13 رمزاً فأكثر,^[A-Z]{2}\d{9}YP|(LP|SY|YT|YL|UG)\d+$,https://track.yw56.com.cn/en/index
+4PX,"4PX, Rx, Lx","CN, HK, SG",13 إلى 18 رمزاً,^(4PX\d+CN|[A-Z]\d{9}(CN|HK|SG))$,https://track.4px.com/#/
+YunExpress,YT,لا يوجد,18 رمزاً,^YT\d{16}$,https://www.yuntrack.com/parcelTracking
+Orange Connex,"ES, EE",لا يوجد,26 رمزاً,^E\d*[A-Z0-9]+$,https://www.orangeconnex.com/tracking?language=en&trackingnumber
+SunYou,"SY, LP, SYRM",لا يوجد,13 إلى 16 رمزاً,"^(SY|LP)\d{13,14}|SYRM\d+$",https://sypost.net/search
+UniUni,"UUS, UNI, UNIA",YQ (لنمط UNIA),14 إلى 16 رمزاً,^(UUS\d{13}|UNI\d+|UNIA\d{9}YQ)$,https://www.uniuni.com/tracking/
+Pitney Bowes,"PB, PBX, UPA",لا يوجد,22 رمزاً,^(PB|PBX|UPA)[A-Z0-9]+$,

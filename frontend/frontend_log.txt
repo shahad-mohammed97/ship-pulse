@@ -1,0 +1,17 @@
+
+> frontend@0.1.0 dev
+> next dev -p 3001
+
+  ▲ Next.js 14.2.0
+  - Local:        http://localhost:3001
+
+ ✓ Starting...
+ ✓ Ready in 1489ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1200ms (757 modules)
+ GET / 200 in 1455ms
+ ✓ Compiled in 279ms (332 modules)
+ ✓ Compiled /shipments in 377ms (761 modules)
+ GET /shipments 200 in 492ms
+ ✓ Compiled /favicon.ico in 146ms (465 modules)
+ GET /favicon.ico 200 in 201ms

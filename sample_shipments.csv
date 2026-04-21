@@ -1,0 +1,5 @@
+order_id,tracking_number,shipped_date,origin_country,destination_country,last_update_date
+ORD001,TRK001,2026-03-10,China,UAE,2026-03-15
+ORD002,TRK002,2026-03-23,USA,UAE,2026-03-24
+ORD003,TRK003,2026-03-20,China,UAE,2026-03-20
+ORD004,TRK004,2026-03-15,Domestic,Domestic,2026-03-16

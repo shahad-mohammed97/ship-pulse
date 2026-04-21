@@ -1,0 +1,6 @@
+order_id,tracking_number,customer_name,customer_email,shipped_date
+RM001,1ST06007525845,Test RM,rm@example.com,2026-04-01
+PB001,UPAAG000000071832989,Test PB,pb@example.com,2026-04-01
+OC001,ES10130466130690001010001E0N,Test OC,oc@example.com,2026-04-01
+DHL001,6101150200448615,Test DHL16,dhl@example.com,2026-04-01
+AA001,TBA321933868151,Test Amazon,aa@example.com,2026-04-01

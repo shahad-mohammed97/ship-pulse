@@ -1,0 +1,17 @@
+tracking_number,shipped_date,customer_email,customer_name,origin_country,destination_country,carrier
+880245150730,2026-03-25,test_user1@example.com,Test User 1,CN,US,fedex
+288356885223,2026-03-26,test_user2@example.com,Test User 2,CN,UK,ups
+456316812382,2026-03-27,test_user3@example.com,Test User 3,CN,AE,dhl
+SF6045718964933,2026-03-28,test_user4@example.com,Test User 4,CN,CA,sf-express
+1ST06006610937,2026-03-29,test_user5@example.com,Test User 5,US,US,ups
+TBA321301562425,2026-03-30,test_user6@example.com,Test User 6,US,US,amazon-logistics
+430950278587,2026-03-31,test_user7@example.com,Test User 7,CA,US,fedex
+441618241586,2026-04-01,test_user8@example.com,Test User 8,UK,US,fedex
+9434608105462822507590,2026-04-01,test_user9@example.com,Test User 9,US,US,usps
+9400108105463689597777,2026-04-01,test_user10@example.com,Test User 10,US,US,usps
+744982166960,2026-04-01,test_user11@example.com,Test User 11,US,US,fedex
+TBA321686760736,2026-04-02,test_user12@example.com,Test User 12,US,US,amazon-logistics
+1ZY393360371293939,2026-04-02,test_user13@example.com,Test User 13,US,US,ups
+9405508105463746601945,2026-04-02,test_user14@example.com,Test User 14,US,US,usps
+1ST06007533417,2026-04-02,test_user15@example.com,Test User 15,US,US,ups
+92612902410664553122174530,2026-04-02,test_user16@example.com,Test User 16,US,US,usps

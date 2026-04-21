@@ -1,0 +1,2 @@
+order_id,tracking_number,shipped_date,origin_country,destination_country,last_update_date
+ORD005,TRK005,2026-03-25,France,USA,2026-03-26

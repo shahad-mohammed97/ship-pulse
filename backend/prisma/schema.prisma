@@ -1,0 +1,85 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Order {
+  id                 String         @id @default(uuid())
+  orderId            String         @map("order_id")
+  trackingNumber     String         @map("tracking_number")
+  originCountry      String         @map("origin_country")
+  destinationCountry String         @map("destination_country")
+  shippedDate        DateTime       @map("shipped_date")
+  lastUpdateDate     DateTime?      @map("last_update_date")
+  daysPassed         Int            @map("days_passed")
+  status             ShipmentStatus @default(NORMAL)
+  riskLevel          RiskLevel      @default(LOW) @map("risk_level")
+  createdAt          DateTime       @default(now()) @map("created_at")
+  updatedAt          DateTime       @default(now()) @updatedAt @map("updated_at")
+  customerName       String?        @map("customer_name")
+  customerEmail      String         @map("customer_email")
+  customerPhone      String?        @map("customer_phone")
+  customerAddress    String?        @map("customer_address")
+  carrier            String?
+  carrierUrl         String?        @map("carrier_url")
+  shippingType       String?        @map("shipping_type")
+  analysisNote       String?        @map("analysis_note")
+  userId             String         @map("user_id")
+  user               User           @relation(fields: [userId], references: [id])
+  
+  // AfterShip Integration Fields
+  aftershipId        String?        @map("aftership_id")
+  aftershipStatus    String?        @map("aftership_status")
+  lastSyncAt         DateTime?      @map("last_sync_at")
+  transitTime        Int?           @map("transit_time")
+
+  @@unique([trackingNumber, userId], name: "trackingNumber_userId")
+  @@map("orders")
+}
+
+model Rule {
+  id                 String   @id @default(uuid())
+  originCountry      String   @map("origin_country")
+  destinationCountry String   @map("destination_country")
+  carrier            String?
+  shippingType       String?  @map("shipping_type")
+  minDays            Int      @map("min_days")
+  maxDays            Int      @map("max_days")
+  stuckDays          Int      @default(3) @map("stuck_days")
+  customMessage      String?  @map("custom_message")
+  createdAt          DateTime @default(now()) @map("created_at")
+  userId             String   @map("user_id")
+  user               User     @relation(fields: [userId], references: [id])
+
+  @@map("rules")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  orders    Order[]
+  rules     Rule[]
+
+  @@map("users")
+}
+
+enum ShipmentStatus {
+  NORMAL
+  STUCK
+  DELAYED
+  DELIVERED
+}
+
+enum RiskLevel {
+  LOW
+  MEDIUM
+  HIGH
+}

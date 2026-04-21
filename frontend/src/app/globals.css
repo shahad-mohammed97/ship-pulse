@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --radius-3xl: 2rem;
+
+  /* Theme Variables mapped to data-theme */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card-bg);
+  --color-card-foreground: var(--card-fg);
+  --color-primary: var(--primary);
+  --color-primary-foreground: #FFFFFF;
+  --color-muted: var(--muted-bg);
+  --color-muted-foreground: var(--muted-fg);
+  --color-border: var(--border-color);
+  --color-input: var(--input-bg);
+  --color-ring: var(--primary);
+}
+
+:root {
+  /* Minimalistic Design Palette */
+  --background: #F9F9F9;
+  --foreground: #0A0B09;
+  --card-bg: #FFFFFF;
+  --card-fg: #0A0B09;
+  --muted-bg: #F3F3F3;
+  --muted-fg: #333333;
+  --border-color: rgba(166, 166, 166, 0.2);
+  --input-bg: #FFFFFF;
+  --bg-overlay: rgba(249, 249, 249, 0.85);
+
+  --primary: #483D8B;
+  /* Using Dark Slate Blue as primary */
+  --secondary: #565845;
+  /* Dark Olive */
+  --accent: #C6A339;
+  /* Gold */
+  --charcoal: #0A0B09;
+  --success: #483D8B;
+  --warning: #C6A339;
+  --danger: #EF4444;
+}
+
+[data-theme='light'] {
+  /* Explicitly same as root for consistency in this design update */
+  --background: #F9F9F9;
+  --foreground: #0A0B09;
+  --card-bg: #FFFFFF;
+  --card-fg: #0A0B09;
+  --muted-bg: #F3F3F3;
+  --muted-fg: #333333;
+  --border-color: rgba(166, 166, 166, 0.2);
+  --input-bg: #FFFFFF;
+}
+
+[data-theme='dark'] {
+  --background: #0A0B09;
+  --foreground: #F9F9F9;
+  --card-bg: #141414;
+  --card-fg: #F9F9F9;
+  --muted-bg: #1A1A1A;
+  --muted-fg: #B0B0B0;
+  --border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* 🌙 DARK MODE SPECIFIC OVERRIDES */
+[data-theme='dark'] button, 
+[data-theme='dark'] .glass-button,
+[data-theme='dark'] a.flex.items-center:not(.branding-link),
+[data-theme='dark'] [role="button"],
+[data-theme='dark'] .bg-white,
+[data-theme='dark'] .bg-primary,
+[data-theme='dark'] .bg-muted {
+  background-color: #1B1826 !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme='dark'] .branding-link span {
+  color: #FFFFFF !important;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground selection:bg-primary/20 selection:text-primary transition-colors duration-500 min-h-screen relative;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+    background-image: url('/images/main-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-foreground/10 rounded-full hover:bg-foreground/20 transition-colors;
+  }
+}
+
+@layer utilities {
+
+  /* Refined Flat Styles */
+  .charcoal-card {
+    @apply bg-card border border-border rounded-[24px] shadow-sm hover:shadow-md transition-all duration-300 backdrop-blur-none;
+  }
+
+  .glass-shell {
+    @apply bg-background/80 border-none shadow-none backdrop-blur-[64px];
+  }
+
+  /* Remove all specific light mode overrides that were glass-related */
+  [data-theme='light'] .charcoal-card,
+  [data-theme='light'] .glass-shell {
+    @apply !bg-card/85 !border-border !shadow-sm !backdrop-blur-[40px];
+  }
+
+  .glass-button {
+    @apply bg-white border border-border rounded-xl hover:bg-muted transition-all duration-300;
+  }
+
+  .main-bg-image {
+    @apply bg-background/0;
+    /* Utility to make container transparent if needed */
+  }
+
+  .hover-scale-101:hover {
+    @apply translate-y-[-2px];
+  }
+}
+
+@keyframes pulse-teal {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.animate-pulse-teal {
+  animation: pulse-teal 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.smooth-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

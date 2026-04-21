@@ -1,0 +1,15 @@
+Link,carrier name,pattern,example
+https://track.4px.com/#/,4px,4px,4PX3001625515822CN
+https://www.orangeconnex.com/tracking?language=en&trackingnumber,orangeconnex,ES1,ES10130466130690001010001E0N
+https://track.yw56.com.cn/en/index,yanwen,,UD731031925YP
+https://sypost.net/search,SYPOST,SY,SYUS018146357
+https://trackpb.shipment.co/track/,Pitney Bowes ,UPA,UPAAG000000071832989
+https://www.dhl.com/us-en/home/tracking.html,DHL,16 digit,6101150200448615
+https://www.yuntrack.com/parcelTracking,yun track,YT,YT2503721901000910
+https://www.uniuni.com/tracking/,uniuni,UUS,UUS53H0738031365426
+https://www.ups.com/us/en/home,ups,1z,1ZC7V928FC49998396
+https://www.usps.com/,usps,22 digit and more,9200190409702000255799
+https://www.aramex.com/us/en/track/shipments,aramex,11 digit,31304518486
+https://www.royalmail.com/track-your-item,royal mail,1st,1ST06007525845
+https://www.fedex.com/en-us/tracking.html,fedex,12 digit,289532891944
+https://track.amazon.com/,amazon,tba,TBA321933868151
